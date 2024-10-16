@@ -1,0 +1,27 @@
+name: Execução de testes
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: '0 9,11,15,18 * * 1,2,3,4,5'
+      
+jobs:
+  e2e-tests:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout projeto
+        uses: actions/checkout@v2
+      
+      - name: Setup Node.js enviroment
+        uses: actions/setup-node@v2.2.0
+        with:
+          node-version: 18.
+
+      - name: Install dependecies
+        run: npm ci
+      - name: Run Cypress tests
+        run: npx cypress run
