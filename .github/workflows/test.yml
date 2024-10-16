@@ -22,6 +22,6 @@ jobs:
           node'version: 18.
 
       - name: Install dependecies
-        run: npm install
+        run: npm ci
       - name: Run Cypress tests
         run: npx cypress run
