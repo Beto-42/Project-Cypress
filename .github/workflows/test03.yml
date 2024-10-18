@@ -24,4 +24,4 @@ jobs:
       - name: Install dependecies
         run: npm ci
       - name: Run AddNota tests
-        run: npx condeceptjs run
+        run: npx cypress run
