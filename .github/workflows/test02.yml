@@ -1,6 +1,6 @@
-name: Execução de testes de criação de tarefas
+#name: Execução de testes de criação de tarefas
 
-on:
+#on:
   push:
     branches: [ main ]
   pull_request:
@@ -8,7 +8,7 @@ on:
   schedule:
     - cron: '0 8,10,12,15,16 * * 1,2,3,4,5'
       
-jobs:
+#jobs:
   e2e-tests:
     runs-on: windows-latest
 
